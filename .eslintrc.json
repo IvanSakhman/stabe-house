@@ -1,0 +1,64 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"], // Your TypeScript files extension
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/jsx-props-no-spreading": "off",
+    "no-console": 0,
+    "no-confusing-arrow": "off",
+    "camelcase": "off",
+    "no-use-before-define": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "import": 0,
+    "import/prefer-default-export": 0,
+    "space-before-function-paren": 0,
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/button-has-type": 2,
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // detect react version
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
